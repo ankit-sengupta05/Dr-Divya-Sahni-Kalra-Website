@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 220 40% 30%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 40% 30%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 40% 30%;
+    --primary: 220 70% 33%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 100% 82%;
+    --secondary-foreground: 220 40% 30%;
+    --muted: 210 20% 96%;
+    --muted-foreground: 220 10% 45%;
+    --accent: 210 100% 82%;
+    --accent-foreground: 220 40% 30%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 20% 88%;
+    --input: 220 20% 88%;
+    --ring: 220 70% 33%;
+    --radius: 0.625rem;
+  }
+
+  body {
+    @apply bg-white text-navy font-inter antialiased;
+    overflow-x: hidden;
+    /* Hide scrollbar while allowing scroll */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  /* Hide scrollbar for Chrome, Safari, Edge, and Opera */
+  body::-webkit-scrollbar {
+    display: none;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-inter;
+  }
+}
+
+@layer components {
+  .pill-btn {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-pill font-inter font-semibold text-sm transition-all duration-200;
+  }
+  .pill-btn:hover {
+    @apply scale-[1.02];
+  }
+  .pill-btn-filled {
+    @apply pill-btn bg-navy text-white;
+  }
+  .pill-btn-filled:hover {
+    @apply bg-navy/90;
+  }
+  .pill-btn-outline {
+    @apply pill-btn border-2 border-navy text-navy bg-transparent;
+  }
+  .pill-btn-outline:hover {
+    @apply bg-navy/5;
+  }
+  .glass-card {
+    @apply rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm;
+  }
+  .section-padding {
+    @apply py-20 md:py-[120px];
+  }
+  .container-padding {
+    @apply px-4 sm:px-6 lg:px-8 xl:px-16;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+html.lenis, html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
